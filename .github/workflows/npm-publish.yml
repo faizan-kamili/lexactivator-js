@@ -23,7 +23,7 @@ jobs:
       
       - name: update setup.py file
         run: |
-          sed -i '/const version =/!b;cconst version = \'v${{ github.event.inputs.packageVersion }}';' predownload.js    
+          sed -i '/const version =/!b;cconst version = \"v${{ github.event.inputs.packageVersion }}";' predownload.js    
       
       - name: update pre-publish.py file
         run: |
