@@ -21,11 +21,11 @@ jobs:
         with:
           persist-credentials: false
       
-      - name: update setup.py file
+      - name: update predownload.js file
         run: |
           sed -i '/const version =/!b;cconst version = \"v${{ github.event.inputs.packageVersion }}";' predownload.js    
       
-      - name: update pre-publish.py file
+      - name: update package.json file
         run: |
           sed -i '/"version":/!b;c \ \ "version": "${{ github.event.inputs.packageVersion }}",' package.json
      
